@@ -11,11 +11,15 @@ import { AngularFireModule } from '@angular/fire/compat';
 import {AngularFireAuthModule} from '@angular/fire/compat/auth';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
-    HomeComponent
+    HomeComponent,
+    PdfViewerComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,8 @@ import { environment } from 'src/environments/environment';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    PdfViewerModule
     
   ],
   providers: [],
