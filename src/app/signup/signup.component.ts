@@ -33,6 +33,7 @@ export class SignupComponent implements OnInit {
   }
 
   submit() {
+    console.log(this.signupdata);
     if (this.isdisabled()) { this.error = "Please fill all fields properly."; return }
     if (this.login) {
       this.as.login(this.formlogin.value).then(res => {
