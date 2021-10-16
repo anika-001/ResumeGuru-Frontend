@@ -1,0 +1,19 @@
+.main{
+    background-color: black;
+    min-width: 100vw;
+    max-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.main-margin{
+    width: 80vw;
+    display: flex;
+    border: solid blue;
+}
+.cust-col{
+    height: 100%;
+    flex-basis: 50%;
+    border: solid rgb(255, 0, 0);
+}
