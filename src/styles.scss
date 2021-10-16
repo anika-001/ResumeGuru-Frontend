@@ -2,4 +2,12 @@
 body{
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
+
+@font-face {
+    font-family: pretty;
+    src: url(./assets/Fonts/pretty.ttf) format("opentype");
+  }
+
+  
