@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/resumeguru-frontend",
+    "public": "dist/mhacks",
     "ignore": [
       "firebase.json",
       "**/.*",
