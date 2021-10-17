@@ -5,9 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { ResumeformComponent } from './resumeform/resumeform.component';
 import { ProfilesiteComponent } from './profilesite/profilesite.component';
 import { ForumComponent } from './forum/forum.component';
-import { PdfViewerComponent } from 'ng2-pdf-viewer';
 import { PrevpdfComponent } from './prevpdf/prevpdf.component';
-import { ProjectsurveyComponent } from './projectsurvey/projectsurvey.component';
 import { AnalyseComponent } from './analyse/analyse.component';
 import { ProjectUploadComponent } from './project-upload/project-upload.component';
 import { ResumeUploadComponent } from './resume-upload/resume-upload.component';
@@ -50,11 +48,8 @@ const routes: Routes = [
     path: 'pdfview',
     component: PrevpdfComponent
 
-  }, {
-    path: 'projectsurvey',
-    component: ProjectsurveyComponent
-
-  },{
+  }, 
+  {
     path:'analyse',
     component: AnalyseComponent
   }
