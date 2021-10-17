@@ -49,9 +49,10 @@
                 <!-- <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl("../../assets/TempAssets/Benefits\ of\ being\ a\ IEEE\ member.pdf?search=Keeping")'
                     style="width: 100%;height: 70vh" 
                     type="application/pdf"></iframe> -->
-                    <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(url)'
+                    <!-- <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(url)'
                     style="width: 100%;height: 70vh" 
-                    type="application/pdf"></iframe>
+                    type="application/pdf"></iframe> -->
+                    <ngx-extended-pdf-viewer [src]="url" [useBrowserLocale]="true" height="70vh"></ngx-extended-pdf-viewer>
                 <!-- <iframe src = "'../../assets/TempAssets/Benefits\ of\ being\ a\ IEEE\ member.pdf'"></iframe> -->
                 <div class = "foundmatch" *ngIf = "click">
                     53% match found!

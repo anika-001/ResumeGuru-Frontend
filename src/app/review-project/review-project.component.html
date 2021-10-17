@@ -1,1 +1,50 @@
-<p>review-project works!</p>
+<div class="main">
+    <div class="title">
+        Resonnect
+    </div>
+
+    <div class="main-margin">
+        <div class = "projectdeets">
+            Name: {{project.payload.data().name}}
+            <a href = {{project.payload.data().githubLink}}>Github Link</a>
+            <a href = {{project.payload.data().projectLink}}>Project Live Link</a>
+            <a href = {{project.payload.data().surveyLink}}>Survey Link</a>
+        </div>
+        <div class="card">
+            <h5 class="card-header">
+                <div class="resumetitle custtitle">
+                    Enter Comments
+                </div>
+            </h5>
+
+            <div class="card-body">
+                <form novalidate (ngSubmit)="save()" [formGroup]="projectUploadForm">
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+
+                            <textarea style = "width: 70%;" class="form-control" type="text" placeholder="Project comments"
+                                formControlName="comments" [ngClass]="{
+                  'is-invalid':
+                    (projectUploadForm.get('comments').touched ||
+                      projectUploadForm.get('comments').dirty) &&
+                    !projectUploadForm.get('comments').valid
+                }"></textarea>
+                            <span class="invalid-feedback">
+                                <span *ngIf="projectUploadForm.get('comments').errors?.required">
+                                    Please enter your comment.
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <button class="custom-btn btn-4" type="submit" style="width:100px" [title]="
+              projectUploadForm.valid
+                ? 'Save your entered data'
+                : 'Disabled until the form data is valid'
+            " [disabled]="!projectUploadForm.valid">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
