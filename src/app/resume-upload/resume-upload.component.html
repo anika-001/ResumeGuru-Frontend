@@ -1,1 +1,63 @@
-<p>resume-upload works!</p>
+<!-- <div class="main">
+    <div class="title">
+        ResumeArchitect
+    </div>
+    <div class="main-margin">
+        <div class="card">
+            <h5 class="card-header">
+                <div class="resumetitle custtitle">
+                    Enter Project Details
+                </div>
+            </h5>
+
+            <div class="card-body">
+                <form novalidate (ngSubmit)="save()" [formGroup]="resumeUploadForm">
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+
+                            <input class="form-control" type="text" placeholder="Domain" formControlName="domain"
+                                [ngClass]="{
+                  'is-invalid':
+                    (resumeUploadForm.get('domain').touched ||
+                      resumeUploadForm.get('domain').dirty) &&
+                    !resumeUploadForm.get('domain').valid
+                }" />
+                            <span class="invalid-feedback">
+                                <span *ngIf="resumeUploadForm.get('domain').errors?.required">
+                                    Please enter your Project name.
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <textarea class="form-control" type="text" placeholder="Description"
+                                formControlName="description" [ngClass]="{
+                  'is-invalid':
+                    (resumeUploadForm.get('description').touched ||
+                      resumeUploadForm.get('description').dirty) &&
+                    !resumeUploadForm.get('description').valid
+                }"></textarea>
+                            <span class="invalid-feedback">
+                                <span *ngIf="resumeUploadForm.get('description').errors?.required">
+                                    Please Enter project description
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <br />
+
+
+                    <button class="custom-btn btn-4" type="submit" style="width:100px" [title]="
+              resumeUploadForm.valid
+                ? 'Save your entered data'
+                : 'Disabled until the form data is valid'
+            " [disabled]="!resumeUploadForm.valid">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> -->
