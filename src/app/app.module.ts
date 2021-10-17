@@ -25,10 +25,14 @@ import { AnalyseComponent } from './analyse/analyse.component';
 import { ProjectUploadComponent } from './project-upload/project-upload.component';
 import { ResumeUploadComponent } from './resume-upload/resume-upload.component';
 import { ReviewComponent } from './review/review.component';
+<<<<<<< HEAD
+import { NavbarComponent } from './navbar/navbar.component';
+=======
 import { ReviewProjectComponent } from './review-project/review-project.component';
 import { ReviewResumeComponent } from './review-resume/review-resume.component';
 import { ResumeComponent } from './resume/resume.component';
 import { ProjectComponent } from './project/project.component';
+>>>>>>> 83c26fec21477b379f772a861e63d9d1139af5e8
 
 @NgModule({
   declarations: [
@@ -44,6 +48,7 @@ import { ProjectComponent } from './project/project.component';
     ProjectUploadComponent,
     ResumeUploadComponent,
     ReviewComponent,
+    NavbarComponent,
     ReviewProjectComponent,
     ReviewResumeComponent,
     ResumeComponent,
