@@ -4,6 +4,7 @@ import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { ResumeformComponent } from './resumeform/resumeform.component';
 import { ProfilesiteComponent } from './profilesite/profilesite.component';
+import { ForumComponent } from './forum/forum.component';
 const routes: Routes = [
   {
     path: 'signin',
@@ -18,6 +19,11 @@ const routes: Routes = [
   }, {
     path: 'profilesite',
     component: ProfilesiteComponent
+
+  },
+  {
+    path: 'forum',
+    component: ForumComponent
 
   }
 ];
