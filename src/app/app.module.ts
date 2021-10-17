@@ -15,6 +15,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { ResumeformComponent } from './resumeform/resumeform.component';
+import { ProfilesiteComponent } from './profilesite/profilesite.component';
+import { ForumComponent } from './forum/forum.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ResumeformComponent } from './resumeform/resumeform.component';
     SignupComponent,
     HomeComponent,
     PdfViewerComponent,
-    ResumeformComponent
+    ResumeformComponent,
+    ProfilesiteComponent,
+    ForumComponent
   ],
   imports: [
     BrowserModule,
