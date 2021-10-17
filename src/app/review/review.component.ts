@@ -45,4 +45,12 @@ export class ReviewComponent implements OnInit {
       this.payload = res;
     })
   }
+  getreview(id){
+
+this.router.navigate(['/resumereview'], { queryParams: {id: id}});
+  }
+  getreview1(id){
+
+    this.router.navigate(['/projectreview'], { queryParams: {id: id}});
+      }
 }

@@ -10,6 +10,9 @@ import { AnalyseComponent } from './analyse/analyse.component';
 import { ProjectUploadComponent } from './project-upload/project-upload.component';
 import { ResumeUploadComponent } from './resume-upload/resume-upload.component';
 import { ReviewComponent } from './review/review.component';
+import { ReviewProjectComponent } from './review-project/review-project.component';
+import { ReviewResumeComponent } from './review-resume/review-resume.component';
+import { ProjectComponent } from './project/project.component';
 const routes: Routes = [
   {
     path: 'signin',
@@ -52,6 +55,16 @@ const routes: Routes = [
   {
     path:'analyse',
     component: AnalyseComponent
+  },{
+    path:'resumereview',
+    component: ReviewResumeComponent
+  },
+  {
+    path:'projectreview',
+    component: ReviewProjectComponent
+  },{
+    path:'project',
+    component: ProjectComponent
   }
 ];
 
