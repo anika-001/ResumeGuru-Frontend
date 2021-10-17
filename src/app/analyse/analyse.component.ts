@@ -15,6 +15,7 @@ export class AnalyseComponent implements OnInit {
   @ViewChild(PdfViewerComponent, {static: false})
   private pdfComponent: PdfViewerComponent;
 
+  click: boolean = false;
   url: any = '';
 doughnut:ChartType='doughnut';
   constructor(private httpClient: HttpClient, public sanitizer: DomSanitizer) { }
@@ -65,14 +66,15 @@ doughnut:ChartType='doughnut';
   }
 
   test(){
-    this.httpClient.post<any>('http://localhost:5000/test', {"num1": 4, "num2": 3}).subscribe(
-      (res)=>{
-        console.log(res);
-      },
-      (err) => {
-        console.log(err);
-      }
-    )
+    this.click = true;
+    // this.httpClient.post<any>('http://localhost:5000/test', {"num1": 4, "num2": 3}).subscribe(
+    //   (res)=>{
+    //     console.log(res);
+    //   },
+    //   (err) => {
+    //     console.log(err);
+    //   }
+    // )
   }
 
   pageRendered() {

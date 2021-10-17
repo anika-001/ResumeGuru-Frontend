@@ -11,7 +11,21 @@
     min-height: 100vh;
   }
  .maincontent{
+  margin-top: 6vh;
     display: flex;
+}
+
+.title{
+  margin-top: 6vh;
+  font-family: pretty;
+  font-size: 300%;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding-left: 10vw;
+  
 }
 
 .filter{

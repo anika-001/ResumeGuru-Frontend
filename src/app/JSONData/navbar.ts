@@ -1,22 +1,22 @@
 export let navbar = [
     {
-        "role":"user",
-        "name":"Mood Tracker",
-        "link":"/dashboard",
+        "name":"Home",
+        "link":"/home",
     },
     {
-        "role":"user",
-        "name":"Activities",
-        "link":"/activities",
+        "name":"Resume Analysis",
+        "link":"/analyse",
     },
     {
-        "role":"user",
-        "name":"Safe Rooms",
-        "link":"/saferoom",
+        "name":"Review",
+        "link":"/reviews",
     },
     {
-        "role":"user",
         "name":"Forum",
         "link":"/forum",
+    },
+    {
+        "name":"Resume Builder",
+        "link":"/resumeform",
     },
 ]
