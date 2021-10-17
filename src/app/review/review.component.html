@@ -1,1 +1,25 @@
-<p>review works!</p>
+<div class="main">
+    <div class = "title">
+        ResumeArchitect
+    </div>
+    <div class="main-margin">
+        <div class = "navdrawer">
+            <div class = "navdraweritem custom-btn btn-4" (click) = "getprojects()">
+                My Projects
+            </div>
+            <div class = "navdraweritem custom-btn btn-4" (click) = "getresumes()">
+                My Resumes
+            </div>
+        </div>
+        <div class = "projectsandresumes" *ngIf = "projects">
+            <div *ngFor = "let i of payload" class = "projectorresume custom-btn btn-15">
+                {{i.payload.doc.data().name}}
+            </div>
+        </div>
+        <div class = "projectsandresumes" *ngIf = "!projects">
+            <div *ngFor = "let i of payload; let ind = index" class = "projectorresume custom-btn btn-15">
+                Resume {{ind}}
+            </div>
+        </div>
+    </div>
+</div>
