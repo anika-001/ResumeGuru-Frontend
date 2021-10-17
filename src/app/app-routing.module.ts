@@ -13,6 +13,7 @@ import { ReviewComponent } from './review/review.component';
 import { ReviewProjectComponent } from './review-project/review-project.component';
 import { ReviewResumeComponent } from './review-resume/review-resume.component';
 import { ProjectComponent } from './project/project.component';
+import { ResumeComponent } from './resume/resume.component';
 const routes: Routes = [
   {
     path: 'signin',
@@ -65,6 +66,10 @@ const routes: Routes = [
   },{
     path:'project',
     component: ProjectComponent
+  },
+  {
+    path: 'resume',
+    component: ResumeComponent
   }
 ];
 

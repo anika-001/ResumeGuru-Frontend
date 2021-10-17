@@ -18,12 +18,12 @@
             </div>
         </div>
         <div class = "projectsandresumes" *ngIf = "projects">
-            <div *ngFor = "let i of payload" class = "projectorresume custom-btn btn-15" (click) = "getreview1(i.payload.doc.id)">
+            <div *ngFor = "let i of payload" class = "projectorresume custom-btn btn-15" (click) = "getreview(i.payload.doc.id)">
                 {{i.payload.doc.data().name}}
             </div>
         </div>
         <div class = "projectsandresumes" *ngIf = "!projects">
-            <div *ngFor = "let i of payload; let ind = index" class = "projectorresume custom-btn btn-15" (click) = "getreview(i.payload.doc.id)">
+            <div *ngFor = "let i of payload; let ind = index" class = "projectorresume custom-btn btn-15" (click) = "getreview1(i.payload.doc.id)">
                 Resume {{ind}}
             </div>
         </div>

@@ -1,1 +1,19 @@
-<p>project works!</p>
+<div class="main">
+    <div class="title">
+        Resonnect
+    </div>
+
+    <div class="main-margin">
+        <div class = "projectdeets" style="margin-bottom: 5vh;">
+            Name: {{project.payload.data().name}}
+            <a href = {{project.payload.data().githubLink}}>Github Link</a>
+            <a href = {{project.payload.data().projectLink}}>Project Live Link</a>
+            <a href = {{project.payload.data().surveyLink}}>Survey Link</a>
+        </div>
+        
+        Comments:
+        <div *ngFor = "let i of comments" style = "background-color: rgb(240, 240, 240); font-size: 200%;">
+            {{i.payload.doc.data().name}}: {{i.payload.doc.data().comments}}
+        </div>
+    </div>
+</div>
