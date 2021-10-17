@@ -1,4 +1,4 @@
-<!-- <div class="main">
+<div class="main">
     <div class="title">
         ResumeArchitect
     </div>
@@ -6,12 +6,21 @@
         <div class="card">
             <h5 class="card-header">
                 <div class="resumetitle custtitle">
-                    Enter Project Details
+                    Enter Resume Details
                 </div>
             </h5>
 
             <div class="card-body">
                 <form novalidate (ngSubmit)="save()" [formGroup]="resumeUploadForm">
+
+                    <div class = "resumeupload">
+                        <label for="file-upload" class="custom-file-upload">
+                            <i class="fa fa-cloud-upload"></i> Upload Resume
+                        </label>
+                        <input type="file" id="file-upload" (change)="uploadresume($event.target)" class="input">
+                    </div>
+                    
+
                     <div class="form-row">
                         <div class="form-group col-md-5">
 
@@ -60,4 +69,4 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>

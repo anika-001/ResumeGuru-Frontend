@@ -11,6 +11,7 @@ import { ChartsModule } from 'ng2-charts';
 import { AngularFireModule } from '@angular/fire/compat';
 import {AngularFireAuthModule} from '@angular/fire/compat/auth';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import {AngularFireStorageModule} from '@angular/fire/compat/storage';
 import { environment } from 'src/environments/environment';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
@@ -52,7 +53,8 @@ import { ReviewComponent } from './review/review.component';
     PdfViewerModule,
     MatSlideToggleModule,
     NgxExtendedPdfViewerModule,
-    ChartsModule
+    ChartsModule,
+    AngularFireStorageModule
     
   ],
   providers: [],

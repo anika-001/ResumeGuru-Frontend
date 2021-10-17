@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
@@ -11,15 +12,12 @@ import { AuthService } from '../services/auth.service';
 })
 export class ResumeUploadComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private db: AngularFirestore, private as: AuthService) {}
+  constructor(private formBuilder: FormBuilder, private router: Router, private db: AngularFirestore, private as: AuthService, private storage: AngularFireStorage) {}
 
   user: any;
-
-  projectUploadForm = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    githubLink: new FormControl(''),
-    projectLink: new FormControl(''),
-    surveyLink: new FormControl(''),
+  pdfupload: any;
+  resumeUploadForm = new FormGroup({
+    domain: new FormControl('', [Validators.required]),
     description: new FormControl('', [Validators.required])
   });
   
@@ -37,15 +35,28 @@ export class ResumeUploadComponent implements OnInit {
     
   }
 
+  uploadresume(eventtarget: any) {
+    let files: FileList = eventtarget.files;
+    this.pdfupload = files.item(0);
+  }
+
   save() {
-    let puf = this.projectUploadForm.value;
-    puf["uid"] = this.user.uid;
-    this.projectUploadForm.get("name").setValue("");
-    this.projectUploadForm.get("githubLink").setValue("");
-    this.projectUploadForm.get("projectLink").setValue("");
-    this.projectUploadForm.get("surveyLink").setValue("");
-    this.projectUploadForm.get("description").setValue("");
-    this.db.collection("Projects").add(puf).then(res => {console.log("Success")}).catch(err => {console.log(err)});
+    const path = `${this.user.uid}/resume/${this.pdfupload.name}`;
+    const ref = this.storage.ref(path);
+    this.storage.upload(path, this.pdfupload).then(
+      ress => {
+        ref.getDownloadURL().subscribe(res => {
+          console.log(res);
+          let data = this.resumeUploadForm.value;
+          data["uid"] = this.user.uid;
+          data["link"] = res;
+          this.db.collection("Resumes").add(data).then(e => {
+            console.log(e)
+          }).
+            catch(e => { console.log(e) });
+        })
+
+      });
   }
 
 }
