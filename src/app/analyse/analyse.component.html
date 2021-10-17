@@ -97,10 +97,10 @@
         <div style="display: flex;margin-top: -40vh;margin-bottom: 10vh;">
             <div style="flex-basis: 30%; flex-direction: column; justify-content: space-evenly;">
                 <div style="font-size: 150%; text-align: center;">Your Most used Keywords</div><canvas baseChart
-                    [data]="expenses.Data" [labels]="expenses.Label" [chartType]="expenses.Type"></canvas>
+                    [data]=" activity.Data" [labels]=" activity.Label" [chartType]="expenses.Type"></canvas>
             </div>
             <div style="flex-basis: 30%; flex-direction: column; justify-content: space-evenly;">
-                <div style="font-size: 150%; text-align: center;">Your Top Skills in percentile</div><canvas baseChart
+                <div style="font-size: 150%; text-align: center;">Top Skills in Percentage(In Deamand)</div><canvas baseChart
                     [data]="expenses.Data" [labels]="expenses.Label" [chartType]="expenses.Type"></canvas>
             </div>
             <div style="flex-basis: 30%;  flex-direction: column; justify-content: space-evenly;">
@@ -113,12 +113,12 @@
                 Similar jobs
             </div>
             <div class="similarjobstabs">
-                <div *ngFor="let i of tands" class="similarjobstab">
+                <div *ngFor="let i of jobs" class="similarjobstab">
                     {{i}}
                 </div>
             </div>
         </div>
-
+<!--
         <div class="impandsimilarity">
             <div class="impandsimilaritytitle custtitle">
                 Imortance and similarity scores match
@@ -154,5 +154,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 </div>
