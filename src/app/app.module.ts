@@ -25,6 +25,10 @@ import { AnalyseComponent } from './analyse/analyse.component';
 import { ProjectUploadComponent } from './project-upload/project-upload.component';
 import { ResumeUploadComponent } from './resume-upload/resume-upload.component';
 import { ReviewComponent } from './review/review.component';
+import { ReviewProjectComponent } from './review-project/review-project.component';
+import { ReviewResumeComponent } from './review-resume/review-resume.component';
+import { ResumeComponent } from './resume/resume.component';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,11 @@ import { ReviewComponent } from './review/review.component';
     AnalyseComponent,
     ProjectUploadComponent,
     ResumeUploadComponent,
-    ReviewComponent
+    ReviewComponent,
+    ReviewProjectComponent,
+    ReviewResumeComponent,
+    ResumeComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,

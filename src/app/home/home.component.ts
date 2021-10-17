@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { PdfViewerComponent } from 'ng2-pdf-viewer';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { DomSanitizer } from '@angular/platform-browser';
-import { pdfDefaultOptions } from 'ngx-extended-pdf-viewer';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -13,62 +13,40 @@ import { pdfDefaultOptions } from 'ngx-extended-pdf-viewer';
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild(PdfViewerComponent, {static: false})
-  private pdfComponent: PdfViewerComponent;
 
-  url: any = '';
+  payload = []
+  user: any;
+  projects: boolean = true;
 
-  constructor(private httpClient: HttpClient, public sanitizer: DomSanitizer) {
-
+  constructor(private httpClient: HttpClient, private db: AngularFirestore, private router: Router, private as: AuthService) {
    }
 
-  tands = [0, 1, 2, 3, 4]
-  name = ['Eesha Ann', 'miesha Connon', 'Jay Victor', 'Kat Dez', 'Aubery Cez']
-  countr = [10, 41, 22, 31, 44]
   ngOnInit(): void {
-  }
-
-  jobdescform = new FormGroup({
-    jobdesc: new FormControl('', [Validators.required]),
-  })
-
-  fileChange(event) {
-    let fileList: FileList = event.target.files;
-    if (fileList.length > 0) {
-      let file: File = fileList[0];
-      let formData: FormData = new FormData();
-      formData.append('uploadFile', file, file.name);
-
-      const reader = new FileReader();
-      reader.readAsDataURL(file); 
-      reader.onload = (_event) => { 
-        this.url = reader.result; 
-    }
-      // let headers = new HttpHeaders();
-      // headers.append('Content-Type', 'multipart/form-data');
-      // headers.append('Accept', 'application/json');
-      // let options = new RequestOptions({ headers: headers });
-    //   this.httpClient.post(this.apiEndPoint, formData, {headers: headers})
-    //     .subscribe(
-    //       data => console.log('success'),
-    //       error => console.log(error)
-    //     )
-    }
-  }
-
-  test(){
-    this.httpClient.post<any>('http://localhost:5000/test', {"num1": 4, "num2": 3}).subscribe(
-      (res)=>{
-        console.log(res);
-      },
-      (err) => {
-        console.log(err);
+    this.as.getUserState().subscribe(user => {
+      if(user == null) {this.router.navigate(['/signin'])}
+      else{
+        this.user = user;
+        this.getprojects();
       }
-    )
+    })
   }
 
-  pageRendered() {
-    this.pdfComponent.pdfViewer.currentScaleValue = 'page-fit';
+  getprojects(){
+    this.projects = true;
+    this.db.collection("Projects", ref=>ref.where("uid","==", this.user.uid)).snapshotChanges().subscribe(res => {
+      console.log("Projects", this.payload)
+      this.payload = []
+      this.payload = res;
+    })
+  }
+
+  getresumes(){
+    this.projects = false;
+    this.db.collection("Resumes", ref=>ref.where("uid","==", this.user.uid)).snapshotChanges().subscribe(res => {
+      console.log("Resumes", this.payload)
+      this.payload = []
+      this.payload = res;
+    })
   }
 
 }
