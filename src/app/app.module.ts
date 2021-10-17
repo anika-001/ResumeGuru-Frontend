@@ -19,14 +19,11 @@ import { ProfilesiteComponent } from './profilesite/profilesite.component';
 import { ForumComponent } from './forum/forum.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { PrevpdfComponent } from './prevpdf/prevpdf.component';
-<<<<<<< HEAD
 import { ProjectsurveyComponent } from './projectsurvey/projectsurvey.component';
 import { AnalyseComponent } from './analyse/analyse.component';
-=======
 import { ProjectUploadComponent } from './project-upload/project-upload.component';
 import { ResumeUploadComponent } from './resume-upload/resume-upload.component';
 import { ReviewComponent } from './review/review.component';
->>>>>>> 39dd6f7438e6ff20416c2fbfd7924c3fca1dea08
 
 @NgModule({
   declarations: [
@@ -38,14 +35,11 @@ import { ReviewComponent } from './review/review.component';
     ProfilesiteComponent,
     ForumComponent,
     PrevpdfComponent,
-<<<<<<< HEAD
     ProjectsurveyComponent,
-    AnalyseComponent
-=======
+    AnalyseComponent,
     ProjectUploadComponent,
     ResumeUploadComponent,
     ReviewComponent
->>>>>>> 39dd6f7438e6ff20416c2fbfd7924c3fca1dea08
   ],
   imports: [
     BrowserModule,
