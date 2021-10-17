@@ -3,151 +3,23 @@
     <div class = "title">
         ResumeArchitect
     </div>
-    <!-- <form class="modetoggle" [formGroup]="jobdescform">
-
-        <mat-slide-toggle ngModel name="enableWifi">Enable Wifi</mat-slide-toggle>
-        <mat-slide-toggle ngModel name="acceptTerms" required>Accept Terms of Service</mat-slide-toggle>
-      
-        <button mat-raised-button type="submit">Save Settings</button>
-      </form> -->
     <div class="main-margin">
-        <div class="resumeupload ">
-            <div class = "resumetitle custtitle">
-                Upload your resume
+        <div class = "navdrawer">
+            <div class = "navdraweritem custom-btn btn-4" (click) = "getprojects()">
+                My Projects
             </div>
-            <label for="file-upload" class="custom-file-upload">
-                <i class="fa fa-cloud-upload"></i> Upload resume
-            </label>
-            <input class="custom-btn btn-4" id="file-upload" type="file"(change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx"/>
-            <!--<input type="file" style = "font-size: 150%;" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx">-->
-        </div>
-        <div class="compare">
-            <div class="cust-col">
-
-                <div class="jobdesc">
-                    <div class="jdtitle custtitle">
-                        Upload job description
-                    </div>
-                    <form [formGroup]="jobdescform" class="jobdescform">
-                        <textarea placeholder="Enter job description" formControlName="jobdesc"
-                            class="jobdescinp myformip"></textarea>
-                            
-                    </form>
-                    <div class="analyzebutton custom-btn btn-4" (click)="test()">
-                        Analyze
-                    </div>
-                </div>
-
-                <!-- <form class="myform">
-    
-                    <input type="hidden" name="_subject" value="Portfolio: New submission!">
-                    <div class="form__group field">
-                        <textarea type="input" id='message' class="form__field" placeholder="Email" name="Message"
-                            id='email' required></textarea>
-                        <label for="message" class="form__label">Message</label>
-                    </div>
-                    <div class="frame"><button class="custom-btn btn-15">Submit</button></div>
-                </form> -->
-            </div>
-            <div class="cust-col">
-                <!-- <pdf-viewer [src]="'../../assets/TempAssets/Benefits\ of\ being\ a\ IEEE\ member.pdf'"
-                    [show-all]="false" [autoresize]="true" [original-size]='true' [fit-to-page]='true'
-                    [render-text]='false' (page-rendered)="pageRendered()"></pdf-viewer> -->
-                <!-- <app-pdf-viewer></app-pdf-viewer> -->
-                <!-- <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl("../../assets/TempAssets/Benefits\ of\ being\ a\ IEEE\ member.pdf?search=Keeping")'
-                    style="width: 100%;height: 70vh" 
-                    type="application/pdf"></iframe> -->
-                    <!-- <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(url)'
-                    style="width: 100%;height: 70vh" 
-                    type="application/pdf"></iframe> -->
-                    <ngx-extended-pdf-viewer [src]="url" [useBrowserLocale]="true" height="70vh"></ngx-extended-pdf-viewer>
-                <!-- <iframe src = "'../../assets/TempAssets/Benefits\ of\ being\ a\ IEEE\ member.pdf'"></iframe> -->
-                <div class = "foundmatch">
-                    53% match found!
-                </div>
+            <div class = "navdraweritem custom-btn btn-4" (click) = "getresumes()">
+                My Resumes
             </div>
         </div>
-
-        <div class="termsscore">
-            <div class="termsandscoretitle custtitle">
-                Count of terms in resume
-            </div>
-            <div class="termsandscoretable">
-                <div class="termsandscorerow">
-                    <div class="termsandscorecell" style="flex-basis: 10%;">
-
-                    </div>
-                    <div class="termsandscorecell" style="flex-basis: 80%;">
-                        Name
-                    </div>
-                    <div class="termsandscorecell" style="flex-basis: 20%;">
-                        Count in resume
-                    </div>
-                </div>
-                <div *ngFor="let i of tands;let name in name" class="termsandscorerow">
-                    <div class="termsandscorecell" style="flex-basis: 10%;">
-                        {{i}}
-                    </div>
-                    <div class="termsandscorecell" style="flex-basis: 80%;">
-                        {{name}}
-                    </div>
-                    <div class="termsandscorecell" style="flex-basis: 20%;">
-                        Count in resume {{countr}}
-                    </div>
-                </div>
+        <div class = "projectsandresumes" *ngIf = "projects">
+            <div *ngFor = "let i of payload" class = "projectorresume custom-btn btn-15">
+                {{i.payload.doc.data().name}}
             </div>
         </div>
-
-        <div class="phrasesandscore">
-            <div class="phrasesandscoretitle custtitle">
-                Phrases and scores from job description
-            </div>
-        </div>
-
-        <div class="similarjobs">
-            <div class="similarjobstitle custtitle">
-                Similar jobs
-            </div>
-            <div class="similarjobstabs">
-                <div *ngFor="let i of tands" class="similarjobstab">
-                    {{i}}
-                </div>
-            </div>
-        </div>
-
-        <div class="impandsimilarity">
-            <div class="impandsimilaritytitle custtitle">
-                Imortance and similarity scores match
-            </div>
-            <div class="impandsimilaritytable">
-                <div class="impandsimilarityrow" style="font-size: 130%;">
-                    <div class="impandsimilaritycell" style="flex-basis: 10%;">
-
-                    </div>
-                    <div class="impandsimilaritycell" style="flex-basis: 20%;">
-                        Importance
-                    </div>
-                    <div class="impandsimilaritycell" style="flex-basis: 20%;">
-                        Similarity
-                    </div>
-                    <div class="impandsimilaritycell" style="flex-basis: 50%;">
-                        Text
-                    </div>
-                </div>
-                <div *ngFor="let i of tands" class="impandsimilarityrow tabclass" style="margin-bottom: 1vh;">
-                    <div class="impandsimilaritycell" style="flex-basis: 10%;" >
-                        {{i}}
-                    </div>
-                    <div class="impandsimilaritycell" style="flex-basis: 20%;">
-                        Importance {{i}}
-                    </div>
-                    <div class="impandsimilaritycell" style="flex-basis: 20%;">
-                        Similarity {{i}}
-                    </div>
-                    <div class="impandsimilaritycell" style="flex-basis: 50%;">
-                        Text {{i}}
-                    </div>
-                </div>
+        <div class = "projectsandresumes" *ngIf = "!projects">
+            <div *ngFor = "let i of payload; let ind = index" class = "projectorresume custom-btn btn-15">
+                Resume {{ind}}
             </div>
         </div>
     </div>
