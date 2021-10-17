@@ -18,6 +18,7 @@ import { ResumeformComponent } from './resumeform/resumeform.component';
 import { ProfilesiteComponent } from './profilesite/profilesite.component';
 import { ForumComponent } from './forum/forum.component';
 import { PrevpdfComponent } from './prevpdf/prevpdf.component';
+import { ProjectsurveyComponent } from './projectsurvey/projectsurvey.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PrevpdfComponent } from './prevpdf/prevpdf.component';
     ResumeformComponent,
     ProfilesiteComponent,
     ForumComponent,
-    PrevpdfComponent
+    PrevpdfComponent,
+    ProjectsurveyComponent
   ],
   imports: [
     BrowserModule,
