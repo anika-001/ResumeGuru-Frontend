@@ -43,7 +43,13 @@
                 <!-- <pdf-viewer [src]="'../../assets/TempAssets/Benefits\ of\ being\ a\ IEEE\ member.pdf'"
                     [show-all]="false" [autoresize]="true" [original-size]='true' [fit-to-page]='true'
                     [render-text]='false' (page-rendered)="pageRendered()"></pdf-viewer> -->
-                <app-pdf-viewer></app-pdf-viewer>
+                <!-- <app-pdf-viewer></app-pdf-viewer> -->
+                <!-- <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl("../../assets/TempAssets/Benefits\ of\ being\ a\ IEEE\ member.pdf?search=Keeping")'
+                    style="width: 100%;height: 70vh" 
+                    type="application/pdf"></iframe> -->
+                    <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(url)'
+                    style="width: 100%;height: 70vh" 
+                    type="application/pdf"></iframe>
                 <!-- <iframe src = "'../../assets/TempAssets/Benefits\ of\ being\ a\ IEEE\ member.pdf'"></iframe> -->
                 <div class = "foundmatch">
                     53% match found!
