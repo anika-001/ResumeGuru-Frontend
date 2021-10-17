@@ -385,6 +385,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   .resumeupload{
     input[type="file"] {
       display: none;
+      
   }
   .custom-file-upload {
       border: 1px solid #ccc;
@@ -456,7 +457,8 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
       }
  span:hover:before {
         height: 100%;
-  } span:hover:after {
+  } 
+  span:hover:after {
         width: 100%;
       }
      
