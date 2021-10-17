@@ -17,6 +17,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { ResumeformComponent } from './resumeform/resumeform.component';
 import { ProfilesiteComponent } from './profilesite/profilesite.component';
 import { ForumComponent } from './forum/forum.component';
+import { PrevpdfComponent } from './prevpdf/prevpdf.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ForumComponent } from './forum/forum.component';
     PdfViewerComponent,
     ResumeformComponent,
     ProfilesiteComponent,
-    ForumComponent
+    ForumComponent,
+    PrevpdfComponent
   ],
   imports: [
     BrowserModule,
