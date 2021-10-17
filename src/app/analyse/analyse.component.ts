@@ -3,24 +3,21 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
 import { DomSanitizer } from '@angular/platform-browser';
-import { pdfDefaultOptions } from 'ngx-extended-pdf-viewer';
-
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-analyse',
+  templateUrl: './analyse.component.html',
+  styleUrls: ['./analyse.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class AnalyseComponent implements OnInit {
+
 
   @ViewChild(PdfViewerComponent, {static: false})
   private pdfComponent: PdfViewerComponent;
 
   url: any = '';
 
-  constructor(private httpClient: HttpClient, public sanitizer: DomSanitizer) {
-
-   }
+  constructor(private httpClient: HttpClient, public sanitizer: DomSanitizer) { }
 
   tands = [0, 1, 2, 3, 4]
   name = ['Eesha Ann', 'miesha Connon', 'Jay Victor', 'Kat Dez', 'Aubery Cez']
