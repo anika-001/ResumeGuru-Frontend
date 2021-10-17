@@ -1,6 +1,6 @@
 <div class="main">
     <div class = "title">
-        ResumeArchitect
+        Resonnect
     </div>
     <div class="main-margin">
         <div class = "navdrawer">
@@ -10,14 +10,15 @@
             <div class = "navdraweritem custom-btn btn-4" (click) = "getresumes()">
                 My Resumes
             </div>
+            
         </div>
         <div class = "projectsandresumes" *ngIf = "projects">
-            <div *ngFor = "let i of payload" class = "projectorresume custom-btn btn-15">
+            <div *ngFor = "let i of payload" class = "projectorresume custom-btn btn-15" (click) = "getreview1(i.payload.doc.id)">
                 {{i.payload.doc.data().name}}
             </div>
         </div>
         <div class = "projectsandresumes" *ngIf = "!projects">
-            <div *ngFor = "let i of payload; let ind = index" class = "projectorresume custom-btn btn-15">
+            <div *ngFor = "let i of payload; let ind = index" class = "projectorresume custom-btn btn-15"(click) = "getreview(i.payload.doc.id)">
                 Resume {{ind}}
             </div>
         </div>
