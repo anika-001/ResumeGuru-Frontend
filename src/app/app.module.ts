@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
+import { ChartsModule } from 'ng2-charts';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import {AngularFireAuthModule} from '@angular/fire/compat/auth';
@@ -50,7 +51,8 @@ import { ReviewComponent } from './review/review.component';
     AngularFirestoreModule,
     PdfViewerModule,
     MatSlideToggleModule,
-    NgxExtendedPdfViewerModule
+    NgxExtendedPdfViewerModule,
+    ChartsModule
     
   ],
   providers: [],

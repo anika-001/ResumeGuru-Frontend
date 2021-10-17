@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
 import { DomSanitizer } from '@angular/platform-browser';
-
+import { ChartType } from 'chart.js';
 @Component({
   selector: 'app-analyse',
   templateUrl: './analyse.component.html',
@@ -16,9 +16,19 @@ export class AnalyseComponent implements OnInit {
   private pdfComponent: PdfViewerComponent;
 
   url: any = '';
-
+doughnut:ChartType='doughnut';
   constructor(private httpClient: HttpClient, public sanitizer: DomSanitizer) { }
+  activity = {
+    Label: ['Secured', 'Developed', 'Won', 'Lead', 'Achieved'],
+    Data: [80, 160, 200, 100, 30],
+    Type:this.doughnut
+  };
 
+  expenses = {
+    Label: ['C++', 'Python', 'Docker', 'DSA', 'Tableau'],
+    Data: [90, 50, 60, 100, 90],
+    Type:this.doughnut
+  };
   tands = [0, 1, 2, 3, 4]
   name = ['Eesha Ann', 'miesha Connon', 'Jay Victor', 'Kat Dez', 'Aubery Cez']
   countr = [10, 41, 22, 31, 44]
