@@ -54,7 +54,8 @@ export class ReviewResumeComponent implements OnInit {
   save() {
     let puf = this.projectUploadForm.value;
     puf["uid"] = this.user.uid;
-    this.db.collection("Projects").doc(this.id).collection("Comments").add(puf).then(res => {console.log("Success")}).catch(err => {console.log(err)});
+    puf["name"] = this.user.name;
+    this.db.collection("Resumes").doc(this.id).collection("Comments").add(puf).then(res => {console.log("Success")}).catch(err => {console.log(err)});
   }
 
 }

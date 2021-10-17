@@ -49,4 +49,13 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  getreview(id){
+
+    this.router.navigate(['/resumereview'], { queryParams: {id: id}});
+      }
+      getreview1(id){
+    
+        this.router.navigate(['/projectreview'], { queryParams: {id: id}});
+          }
+
 }

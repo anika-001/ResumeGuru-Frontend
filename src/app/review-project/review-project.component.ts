@@ -52,6 +52,7 @@ export class ReviewProjectComponent implements OnInit {
 
   save() {
     let puf = this.projectUploadForm.value;
+    puf["name"] = this.user.name;
     puf["uid"] = this.user.uid;
     this.db.collection("Projects").doc(this.id).collection("Comments").add(puf).then(res => {console.log("Success")}).catch(err => {console.log(err)});
   }
