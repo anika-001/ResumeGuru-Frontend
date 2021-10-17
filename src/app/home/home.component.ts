@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
 import { DomSanitizer } from '@angular/platform-browser';
+import { pdfDefaultOptions } from 'ngx-extended-pdf-viewer';
 
 
 @Component({
@@ -17,7 +18,9 @@ export class HomeComponent implements OnInit {
 
   url: any = '';
 
-  constructor(private httpClient: HttpClient, public sanitizer: DomSanitizer) { }
+  constructor(private httpClient: HttpClient, public sanitizer: DomSanitizer) {
+
+   }
 
   tands = [0, 1, 2, 3, 4]
   name = ['Eesha Ann', 'miesha Connon', 'Jay Victor', 'Kat Dez', 'Aubery Cez']
