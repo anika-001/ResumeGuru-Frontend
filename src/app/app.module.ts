@@ -24,6 +24,7 @@ import { AnalyseComponent } from './analyse/analyse.component';
 import { ProjectUploadComponent } from './project-upload/project-upload.component';
 import { ResumeUploadComponent } from './resume-upload/resume-upload.component';
 import { ReviewComponent } from './review/review.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ReviewComponent } from './review/review.component';
     AnalyseComponent,
     ProjectUploadComponent,
     ResumeUploadComponent,
-    ReviewComponent
+    ReviewComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
