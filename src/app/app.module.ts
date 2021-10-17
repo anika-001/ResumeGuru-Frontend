@@ -17,6 +17,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { ResumeformComponent } from './resumeform/resumeform.component';
 import { ProfilesiteComponent } from './profilesite/profilesite.component';
 import { ForumComponent } from './forum/forum.component';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ForumComponent } from './forum/forum.component';
     AngularFireAuthModule,
     AngularFirestoreModule,
     PdfViewerModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    NgxExtendedPdfViewerModule
     
   ],
   providers: [],

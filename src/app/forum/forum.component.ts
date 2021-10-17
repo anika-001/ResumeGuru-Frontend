@@ -47,7 +47,7 @@ export class ForumComponent implements OnInit {
   }
   addthread(){
     if(this.user == null){
-      this.router.navigate(['/login']);
+      this.router.navigate(['/signin']);
     }
     else{
       this.db.collection("Threads").add({"madeby": this.user.name, "uid": this.user.uid, "topic": this.threadform.get("newth").value}).then(res => {
@@ -58,7 +58,7 @@ export class ForumComponent implements OnInit {
 
   addthreadAnon(){
     if(this.user == null){
-      this.router.navigate(['/login']);
+      this.router.navigate(['/signin']);
     }
     else{
       this.db.collection("Threads").add({"madeby": "Anonymous", "uid": this.user.uid, "topic": this.threadform.get("newth").value}).then(res => {
@@ -74,7 +74,7 @@ export class ForumComponent implements OnInit {
   }
   reply(){
     if(this.user == null){
-      this.router.navigate(['/login']);
+      this.router.navigate(['/signin']);
     }
     else{
       this.db.collection("Threads").doc(this.thread.payload.doc.id).collection("comments").add({"uid": this.user.uid, "comment": this.replyform.get("replyin").value, "name": this.user.name}).then(res => {
@@ -85,7 +85,7 @@ export class ForumComponent implements OnInit {
 
   replyAnon(){
     if(this.user == null){
-      this.router.navigate(['/login']);
+      this.router.navigate(['/signin']);
     }
     else{
       this.db.collection("Threads").doc(this.thread.payload.doc.id).collection("comments").add({"uid": this.user.uid, "comment": this.replyform.get("replyin").value, "name": "Anonymous"}).then(res => {

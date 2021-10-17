@@ -1,11 +1,11 @@
 <div class = "main">
-    <div class = "header"></div>
+    <!-- <div class = "header"></div> -->
     <div class = "maincontent">
         <div class = "filter">
             <div class = "yourcomment">
                 <form [formGroup]="threadform" style="width: 100%;"><input class = "ip" placeholder="Add a Thread" type="text" style="width: 100%;" formControlName="newth"></form>
-                <div style="align-self: flex-start; margin-right: 10%; font-size: 50%; display:flex; width: 20vw; margin-left: 5px;"><button class = "custbutton" style = "padding: 0% 0%;"(click) = "addthread()">Add</button>
-                    <button class = "custbutton" style = "margin-left: 10px;"(click) = "addthreadAnon()">Add Anonymously</button></div>
+                <div style="align-self: flex-start; margin-right: 10%; font-size: 50%; display:flex; width: 20vw; margin-left: 5px;"><button class = "custom-btn btn-4" style = "padding: 0% 0%;"(click) = "addthread()">Add</button>
+                    <button class = "custom-btn btn-4" style = "margin-left: 10px;"(click) = "addthreadAnon()">Add Anonymously</button></div>
             </div>
             <div style="font-size: 130%; text-align: center; width: 100%;">Threads: </div>
             <div *ngFor = "let x of allthreads" (click) = "showthread(x)" style = "margin: 5% 2%; cursor: pointer; text-decoration: underline;">
@@ -21,7 +21,7 @@
             <div class = "yourcomment">
                 <form [formGroup]="replyform" style="width: 100%;"><input class = "ip" placeholder="reply" type="text" style="width: 80%;" formControlName="replyin"></form>
                 <div style="align-self: flex-end; margin-right: 10%; display:flex; font-size: 70%;"><button class = "custbutton" (click) = "reply()">Reply</button>
-                    <button class = "custbutton" style = "margin-left: 10px;" (click) = "replyAnon()">Reply Anonymously</button></div>
+                    <button class = "custom-btn btn4" style = "margin-left: 10px;" (click) = "replyAnon()">Reply Anonymously</button></div>
             </div>
             <div class = "comments">
                 <div class = "comment" *ngFor = "let x of comments">
