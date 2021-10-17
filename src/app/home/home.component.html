@@ -1,18 +1,21 @@
 <!-- <app-pdf-viewer></app-pdf-viewer> -->
 <div class="main">
     <div class = "title">
-        ResumeGuru
+        ResumeArchitect
     </div>
     <div class="main-margin">
         <div class="resumeupload ">
+            <div class = "resumetitle custtitle">
+                Upload your resume
+            </div>
             
-            <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx">
+            <input type="file" style = "font-size: 150%;" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx">
         </div>
         <div class="compare">
             <div class="cust-col">
 
                 <div class="jobdesc">
-                    <div class="jdtitle">
+                    <div class="jdtitle custtitle">
                         Upload job description
                     </div>
                     <form [formGroup]="jobdescform" class="jobdescform">
@@ -20,7 +23,7 @@
                             class="jobdescinp myformip"></textarea>
                             
                     </form>
-                    <div class="analyzebutton" (click)="test()">
+                    <div class="analyzebutton custom-btn btn-4" (click)="test()">
                         Analyze
                     </div>
                 </div>
@@ -42,12 +45,14 @@
                     [render-text]='false' (page-rendered)="pageRendered()"></pdf-viewer> -->
                 <app-pdf-viewer></app-pdf-viewer>
                 <!-- <iframe src = "'../../assets/TempAssets/Benefits\ of\ being\ a\ IEEE\ member.pdf'"></iframe> -->
-
+                <div class = "foundmatch">
+                    53% match found!
+                </div>
             </div>
         </div>
 
         <div class="termsscore">
-            <div class="termsandscoretitle">
+            <div class="termsandscoretitle custtitle">
                 Count of terms in resume
             </div>
             <div class="termsandscoretable">
@@ -77,28 +82,28 @@
         </div>
 
         <div class="phrasesandscore">
-            <div class="phrasesandscoretitle">
+            <div class="phrasesandscoretitle custtitle">
                 Phrases and scores from job description
             </div>
         </div>
 
         <div class="similarjobs">
-            <div class="similarjobstitle">
+            <div class="similarjobstitle custtitle">
                 Similar jobs
             </div>
             <div class="similarjobstabs">
-                <div *ngFor="let i of tands" class="similarjobstab custom-btn btn-4">
+                <div *ngFor="let i of tands" class="similarjobstab">
                     {{i}}
                 </div>
             </div>
         </div>
 
         <div class="impandsimilarity">
-            <div class="impandsimilaritytitle">
+            <div class="impandsimilaritytitle custtitle">
                 Imortance and similarity scores match
             </div>
             <div class="impandsimilaritytable">
-                <div class="impandsimilarityrow">
+                <div class="impandsimilarityrow" style="font-size: 130%;">
                     <div class="impandsimilaritycell" style="flex-basis: 10%;">
 
                     </div>
