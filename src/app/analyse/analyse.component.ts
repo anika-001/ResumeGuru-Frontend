@@ -30,6 +30,7 @@ doughnut:ChartType='doughnut';
     Type:this.doughnut
   };
   tands = [0, 1, 2, 3, 4]
+  jobs=['Software Development Engineer','Research Intern','Teacher Assistant','Devops engineer','Cloud Solution Architect']
   name = ['Eesha Ann', 'miesha Connon', 'Jay Victor', 'Kat Dez', 'Aubery Cez']
   countr = [10, 41, 22, 31, 44]
   ngOnInit(): void {
