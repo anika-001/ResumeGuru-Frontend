@@ -1,1 +1,106 @@
-<p>project-upload works!</p>
+<div class="main">
+    <div class="title">
+        ResumeArchitect
+    </div>
+    <!-- <form class="modetoggle" [formGroup]="jobdescform">
+  
+        <mat-slide-toggle ngModel name="enableWifi">Enable Wifi</mat-slide-toggle>
+        <mat-slide-toggle ngModel name="acceptTerms" required>Accept Terms of Service</mat-slide-toggle>
+      
+        <button mat-raised-button type="submit">Save Settings</button>
+      </form> -->
+    <div class="main-margin">
+        <div class="card">
+            <h5 class="card-header">
+                <div class="resumetitle custtitle">
+                    Enter Project Details
+                </div>
+            </h5>
+
+            <div class="card-body">
+                <form novalidate (ngSubmit)="save()" [formGroup]="projectUploadForm">
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+
+                            <input class="form-control" type="text" placeholder="Project Name"
+                                formControlName="name" [ngClass]="{
+                  'is-invalid':
+                    (projectUploadForm.get('name').touched ||
+                      projectUploadForm.get('name').dirty) &&
+                    !projectUploadForm.get('name').valid
+                }" />
+                            <span class="invalid-feedback">
+                                <span *ngIf="projectUploadForm.get('name').errors?.required">
+                                    Please enter your Project name.
+                                </span>
+                            </span>
+                        </div>
+
+                        <div class="form-group col-md-5">
+
+                            <input class="form-control" type="text" placeholder="Github Link"
+                                formControlName="githubLink"/>
+                            <span class="invalid-feedback">
+                                <span *ngIf="projectUploadForm.get('githubLink').errors?.required">
+                                    Please enter your last name.
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <input class="form-control" type="text" placeholder="Project Link"
+                                formControlName="projectLink"/>
+                            <span class="invalid-feedback">
+                                <span *ngIf="projectUploadForm.get('projectLink').errors?.required">
+                                   
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <input class="form-control" type="text" placeholder="Survey Link"
+                                formControlName="surveyLink"/>
+                            <span class="invalid-feedback">
+                                <span *ngIf="projectUploadForm.get('surveyLink').errors?.required">
+                                   
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <textarea class="form-control" type="text" placeholder="Description"
+                                formControlName="description" [ngClass]="{
+                  'is-invalid':
+                    (projectUploadForm.get('description').touched ||
+                      projectUploadForm.get('description').dirty) &&
+                    !projectUploadForm.get('description').valid
+                }" ></textarea>
+                            <span class="invalid-feedback">
+                                <span *ngIf="projectUploadForm.get('description').errors?.required">
+                                   Please Enter project description
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <br />
+
+
+                    <button class="custom-btn btn-4" type="submit" style="width:100px" [title]="
+              projectUploadForm.valid
+                ? 'Save your entered data'
+                : 'Disabled until the form data is valid'
+            " [disabled]="!projectUploadForm.valid">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
