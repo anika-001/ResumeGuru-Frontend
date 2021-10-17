@@ -14,13 +14,15 @@ import { environment } from 'src/environments/environment';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { ResumeformComponent } from './resumeform/resumeform.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     HomeComponent,
-    PdfViewerComponent
+    PdfViewerComponent,
+    ResumeformComponent
   ],
   imports: [
     BrowserModule,
