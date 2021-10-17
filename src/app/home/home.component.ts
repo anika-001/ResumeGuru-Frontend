@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-home',
@@ -13,7 +15,9 @@ export class HomeComponent implements OnInit {
   @ViewChild(PdfViewerComponent, {static: false})
   private pdfComponent: PdfViewerComponent;
 
-  constructor(private httpClient: HttpClient) { }
+  url: any = '';
+
+  constructor(private httpClient: HttpClient, public sanitizer: DomSanitizer) { }
 
   tands = [0, 1, 2, 3, 4]
 
@@ -30,6 +34,12 @@ export class HomeComponent implements OnInit {
       let file: File = fileList[0];
       let formData: FormData = new FormData();
       formData.append('uploadFile', file, file.name);
+
+      const reader = new FileReader();
+      reader.readAsDataURL(file); 
+      reader.onload = (_event) => { 
+        this.url = reader.result; 
+    }
       // let headers = new HttpHeaders();
       // headers.append('Content-Type', 'multipart/form-data');
       // headers.append('Accept', 'application/json');
