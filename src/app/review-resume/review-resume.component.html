@@ -5,6 +5,9 @@
 
     <div class="main-margin">
         <div class = "projectdeets">
+            <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(project.payload.data().link)'
+                    style="width: 100%;height: 70vh" 
+                    type="application/pdf"></iframe>
             <div>Domain: {{project.payload.data().domain}}</div>
             <div>Description: {{project.payload.data().description}}</div>
             

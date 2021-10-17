@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-review-resume',
@@ -31,7 +32,7 @@ export class ReviewResumeComponent implements OnInit {
 
  
 
-  constructor(private route: ActivatedRoute, private formBuilder: FormBuilder, private router: Router, private db: AngularFirestore, private as: AuthService) {}
+  constructor(private route: ActivatedRoute, private formBuilder: FormBuilder, private router: Router, private db: AngularFirestore, private as: AuthService, public sanitizer: DomSanitizer) {}
 
   user: any;
 
