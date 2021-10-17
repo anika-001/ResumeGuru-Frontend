@@ -4,7 +4,8 @@
         ResumeGuru
     </div>
     <div class="main-margin">
-        <div class="resumeupload">
+        <div class="resumeupload ">
+            
             <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx">
         </div>
         <div class="compare">
@@ -16,7 +17,8 @@
                     </div>
                     <form [formGroup]="jobdescform" class="jobdescform">
                         <textarea placeholder="Enter job description" formControlName="jobdesc"
-                            class="jobdescinp"></textarea>
+                            class="jobdescinp myformip"></textarea>
+                            
                     </form>
                     <div class="analyzebutton" (click)="test()">
                         Analyze
@@ -85,7 +87,7 @@
                 Similar jobs
             </div>
             <div class="similarjobstabs">
-                <div *ngFor="let i of tands" class="similarjobstab">
+                <div *ngFor="let i of tands" class="similarjobstab custom-btn btn-4">
                     {{i}}
                 </div>
             </div>
@@ -110,8 +112,8 @@
                         Text
                     </div>
                 </div>
-                <div *ngFor="let i of tands" class="impandsimilarityrow">
-                    <div class="impandsimilaritycell" style="flex-basis: 10%;">
+                <div *ngFor="let i of tands" class="impandsimilarityrow tabclass" style="margin-bottom: 1vh;">
+                    <div class="impandsimilaritycell" style="flex-basis: 10%;" >
                         {{i}}
                     </div>
                     <div class="impandsimilaritycell" style="flex-basis: 20%;">
