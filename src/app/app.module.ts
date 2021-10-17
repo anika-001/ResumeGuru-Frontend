@@ -13,6 +13,7 @@ import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    PdfViewerModule
+    PdfViewerModule,
+    MatSlideToggleModule
     
   ],
   providers: [],
