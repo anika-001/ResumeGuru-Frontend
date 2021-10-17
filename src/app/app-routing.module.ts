@@ -8,6 +8,7 @@ import { ForumComponent } from './forum/forum.component';
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
 import { PrevpdfComponent } from './prevpdf/prevpdf.component';
 import { ProjectsurveyComponent } from './projectsurvey/projectsurvey.component';
+import { AnalyseComponent } from './analyse/analyse.component';
 const routes: Routes = [
   {
     path: 'signin',
@@ -37,6 +38,9 @@ const routes: Routes = [
     path: 'projectsurvey',
     component: ProjectsurveyComponent
 
+  },{
+    path:'analyse',
+    component: AnalyseComponent
   }
 ];
 

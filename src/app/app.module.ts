@@ -19,6 +19,7 @@ import { ProfilesiteComponent } from './profilesite/profilesite.component';
 import { ForumComponent } from './forum/forum.component';
 import { PrevpdfComponent } from './prevpdf/prevpdf.component';
 import { ProjectsurveyComponent } from './projectsurvey/projectsurvey.component';
+import { AnalyseComponent } from './analyse/analyse.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProjectsurveyComponent } from './projectsurvey/projectsurvey.component'
     ProfilesiteComponent,
     ForumComponent,
     PrevpdfComponent,
-    ProjectsurveyComponent
+    ProjectsurveyComponent,
+    AnalyseComponent
   ],
   imports: [
     BrowserModule,
