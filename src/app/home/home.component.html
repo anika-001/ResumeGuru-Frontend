@@ -5,11 +5,17 @@
     </div>
     <div class="main-margin">
         <div class = "navdrawer">
-            <div class = "navdraweritem custom-btn btn-4" (click) = "getprojects()">
+            <div class = "navdraweritem custom-btn btn-4" (click) = "getprojects()" style="width: 70%;">
                 My Projects
             </div>
-            <div class = "navdraweritem custom-btn btn-4" (click) = "getresumes()">
+            <div class = "navdraweritem custom-btn btn-4" (click) = "getresumes()" style="width: 70%;">
                 My Resumes
+            </div>
+            <div class = "navdraweritem custom-btn btn-4" routerLink="/projectupload" style="width: 70%;">
+                Submit project for review
+            </div>
+            <div class = "navdraweritem custom-btn btn-4" routerLink="/resumeupload" style="width: 70%;">
+                Submit resume for review
             </div>
         </div>
         <div class = "projectsandresumes" *ngIf = "projects">
