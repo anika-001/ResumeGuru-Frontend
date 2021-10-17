@@ -75,15 +75,15 @@
                         Count in resume
                     </div>
                 </div>
-                <div *ngFor="let i of tands;let name in name" class="termsandscorerow">
+                <div *ngFor="let i of [0,1,2,3,4]" class="termsandscorerow">
                     <div class="termsandscorecell" style="flex-basis: 10%;">
                         {{i}}
                     </div>
                     <div class="termsandscorecell" style="flex-basis: 80%;">
-                        {{name}}
+                        {{name[i]}}
                     </div>
                     <div class="termsandscorecell" style="flex-basis: 20%;">
-                        Count in resume {{countr}}
+                    {{countr[i]}}
                     </div>
                 </div>
             </div>
@@ -91,10 +91,23 @@
 
         <div class="phrasesandscore">
             <div class="phrasesandscoretitle custtitle">
-                Phrases and scores from job description
+                The Statics
             </div>
         </div>
-
+        <div style="display: flex;margin-top: -40vh;margin-bottom: 10vh;">
+            <div style="flex-basis: 30%; flex-direction: column; justify-content: space-evenly;">
+                <div style="font-size: 150%; text-align: center;">Your Most used Keywords</div><canvas baseChart
+                    [data]="expenses.Data" [labels]="expenses.Label" [chartType]="expenses.Type"></canvas>
+            </div>
+            <div style="flex-basis: 30%; flex-direction: column; justify-content: space-evenly;">
+                <div style="font-size: 150%; text-align: center;">Your Top Skills in percentile</div><canvas baseChart
+                    [data]="expenses.Data" [labels]="expenses.Label" [chartType]="expenses.Type"></canvas>
+            </div>
+            <div style="flex-basis: 30%;  flex-direction: column; justify-content: space-evenly;">
+                <div style="font-size: 150%; text-align: center;">Resume ATS Score</div><canvas baseChart
+                    [data]="expenses.Data" [labels]="expenses.Label" [chartType]="expenses.Type"></canvas>
+            </div>
+        </div>
         <div class="similarjobs">
             <div class="similarjobstitle custtitle">
                 Similar jobs
