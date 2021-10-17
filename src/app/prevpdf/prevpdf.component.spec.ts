@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ResumeformComponent } from './resumeform.component';
+import { PrevpdfComponent } from './prevpdf.component';
 
-describe('ResumeformComponent', () => {
-  let component: ResumeformComponent;
-  let fixture: ComponentFixture<ResumeformComponent>;
+describe('PrevpdfComponent', () => {
+  let component: PrevpdfComponent;
+  let fixture: ComponentFixture<PrevpdfComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ResumeformComponent ]
+      declarations: [ PrevpdfComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ResumeformComponent);
+    fixture = TestBed.createComponent(PrevpdfComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

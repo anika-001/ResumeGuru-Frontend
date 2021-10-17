@@ -18,6 +18,10 @@ import { ResumeformComponent } from './resumeform/resumeform.component';
 import { ProfilesiteComponent } from './profilesite/profilesite.component';
 import { ForumComponent } from './forum/forum.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import { PrevpdfComponent } from './prevpdf/prevpdf.component';
+import { ProjectUploadComponent } from './project-upload/project-upload.component';
+import { ResumeUploadComponent } from './resume-upload/resume-upload.component';
+import { ReviewComponent } from './review/review.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     PdfViewerComponent,
     ResumeformComponent,
     ProfilesiteComponent,
-    ForumComponent
+    ForumComponent,
+    PrevpdfComponent,
+    ProjectUploadComponent,
+    ResumeUploadComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,
