@@ -19,8 +19,8 @@ export class AnalyseComponent implements OnInit {
 doughnut:ChartType='doughnut';
   constructor(private httpClient: HttpClient, public sanitizer: DomSanitizer) { }
   activity = {
-    Label: ['Secured', 'Developed', 'Won', 'Lead', 'Achieved'],
-    Data: [80, 160, 200, 100, 30],
+    Label: ['Secured', 'Developed', 'Designed', 'Lead', 'implemented'],
+    Data: [1, 4, 2, 2, 4],
     Type:this.doughnut
   };
 
@@ -31,8 +31,8 @@ doughnut:ChartType='doughnut';
   };
   tands = [0, 1, 2, 3, 4]
   jobs=['Software Development Engineer','Research Intern','Teacher Assistant','Devops engineer','Cloud Solution Architect']
-  name = ['Eesha Ann', 'miesha Connon', 'Jay Victor', 'Kat Dez', 'Aubery Cez']
-  countr = [10, 41, 22, 31, 44]
+  name = ['Correctness', 'clarity', 'Engagement', 'delivery']
+  countr = ['7 alerts', 'very clear', 'very engaging', 'slightly off']
   ngOnInit(): void {
   }
 
